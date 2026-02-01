@@ -1,0 +1,42 @@
+select year(hiredate) from emp1
+
+select month(hiredate) from emp1
+
+select day(hiredate) from emp1
+
+select GETDATE()
+
+select CURRENT_TIMESTAMP
+
+select isdate(10)
+select isdate('19810101')
+
+ select Dateadd(mm,1,CURRENT_TIMESTAMP)
+
+ select Dateadd(day,1,CURRENT_TIMESTAMP)
+
+  select Dateadd(yy,1,CURRENT_TIMESTAMP)
+
+ select Datediff(mm,'19810101','19820101')
+
+  select Datediff(mm,'19810101','19821201')
+
+ select Datediff(YYYY,'19810101','19820101')
+
+ select Datediff(day,'19810101','19820101')
+
+ select Datediff(mm,'19810101',CURRENT_TIMESTAMP)
+
+  select Datename(mm,CURRENT_TIMESTAMP)
+
+  select Datename(yy,CURRENT_TIMESTAMP)
+
+  select Datename(day,CURRENT_TIMESTAMP)
+
+  select Datename(weekday,CURRENT_TIMESTAMP)
+
+  select Datepart(mm,CURRENT_TIMESTAMP)
+
+  select Datepart(yy,CURRENT_TIMESTAMP)
+
+  select Datepart(day,CURRENT_TIMESTAMP)
