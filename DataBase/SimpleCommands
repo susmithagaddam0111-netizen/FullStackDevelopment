@@ -1,0 +1,122 @@
+CREATE TABLE emp1
+(emp1NO int NOT NULL,
+ENAME VARCHAR(10),
+JOB VARCHAR(9),
+MGR int,
+HIREDATE DATETIME,
+SAL int,
+COMM int,
+deptNO INT)
+
+INSERT INTO emp1 VALUES
+(7369, 'SMITH', 'CLERK', 7902, '17-DEC-1980', 800, NULL, 20)
+INSERT INTO emp1 VALUES
+(7499, 'ALLEN', 'SALESMAN', 7698, '20-FEB-1981', 1600, 300, 30)
+INSERT INTO emp1 VALUES
+(7521, 'WARD', 'SALESMAN', 7698, '22-FEB-1981', 1250, 500, 30)
+INSERT INTO emp1 VALUES
+(7566, 'JONES', 'MANAGER', 7839, '2-APR-1981', 2975, NULL, 20)
+INSERT INTO emp1 VALUES
+(7654, 'MARTIN', 'SALESMAN', 7698, '28-SEP-1981', 1250, 1400, 30)
+INSERT INTO emp1 VALUES
+(7698, 'BLAKE', 'MANAGER', 7839, '1-MAY-1981', 2850, NULL, 30)
+INSERT INTO emp1 VALUES
+(7782, 'CLARK', 'MANAGER', 7839, '9-JUN-1981', 2450, NULL, 10)
+INSERT INTO emp1 VALUES
+(7788, 'SCOTT', 'ANALYST', 7566, '09-DEC-1982', 3000, NULL, 20)
+INSERT INTO emp1 VALUES
+(7839, 'KING', 'PRESIDENT', NULL, '17-NOV-1981', 5000, NULL, 10)
+INSERT INTO emp1 VALUES
+(7844, 'TURNER', 'SALESMAN', 7698, '8-SEP-1981', 1500, 0, 30)
+INSERT INTO emp1 VALUES
+(7876, 'ADAMS', 'CLERK', 7788, '12-JAN-1983', 1100, NULL, 20)
+INSERT INTO emp1 VALUES
+(7900, 'JAMES', 'CLERK', 7698, '3-DEC-1981', 950, NULL, 30)
+INSERT INTO emp1 VALUES
+(7902, 'FORD', 'ANALYST', 7566, '3-DEC-1981', 3000, NULL, 20)
+INSERT INTO emp1 VALUES
+(7934, 'MILLER', 'CLERK', 7782, '23-JAN-1982', 1300, NULL, 10)
+
+CREATE TABLE dept1
+(deptNO INT,
+DNAME VARCHAR(14),
+LOC varchar(20) )
+
+INSERT INTO dept1 VALUES (10, 'ACCOUNTING', 'NEW YORK')
+INSERT INTO dept1 VALUES (20, 'RESEARCH', 'DALLAS')
+INSERT INTO dept1 VALUES (30, 'SALES', 'CHICAGO')
+INSERT INTO dept1 VALUES (40, 'OPERATIONS', 'BOSTON')
+
+SELECT * FROM EMP1;
+select*from dept1
+
+
+TRUNCATE TABLE DEPT1
+
+
+---alter 
+/*
+1.add column
+2.drop column
+3.add constraint
+4. drop constraint
+5. null to not null
+*/
+--  alter table table_name add column_name datatype
+alter table emp1 add  up_sal int
+-- alter table tablename drop column columname
+alter table emp1 drop column up_sal 
+-- alter table tablename add constraint constraint_name constraint(column_name)
+alter table emp1 add constraint con_unq unique(ename)
+-- alter table tablename drop constraint constraint_name
+alter table emp1 drop constraint con_unq
+--alter table table_name alter column column_name datatype not null
+alter table emp1 alter column ename varchar(10) not null
+
+select*from emp1
+---update
+--update  tablename set columname=values
+update  emp1 set up_sal=5000
+update emp1 set up_sal=7000 where ename='king'
+
+--delete from tablename where col=val
+delete from emp1 where ename = 'king'
+
+-- commit ,rollback.
+
+create table teacher(tname varchar(30))
+
+--commit
+begin transaction
+insert into teacher values('mamatha')
+insert into teacher values('pragna')
+commit --save
+
+begin transaction
+insert into teacher values('deepu')
+
+begin transaction
+insert into teacher values('niharika')
+
+begin transaction
+rollback ;
+
+--savepoint
+begin transaction 
+insert into teacher values('pubu')
+insert into teacher values('bupu')
+save transaction s1
+
+begin transaction
+insert into teacher values('deepu')
+insert into teacher values('babu')
+save transaction s2
+
+begin transaction
+insert into teacher values('niha')
+insert into teacher values('vishal')
+save transaction s3
+
+select tname from teacher
+
+commit transaction s2
