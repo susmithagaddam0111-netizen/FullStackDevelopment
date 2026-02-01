@@ -1,0 +1,39 @@
+--- aggregate functions-----(multirow functions)
+
+select sum(sal) from emp1
+
+select max(sal) from emp1
+
+select count(*) from emp1
+
+select avg(sal) from emp1
+ 
+ select min(ename) from emp1
+
+ select max(ename) from emp1
+
+select ename,emp1no from emp1 group by ename,emp1no having max(sal)>1000
+
+-- orderby clause 
+
+select ename from emp1 order by ename
+
+select ename,sal from emp1 order by sal asc
+
+select ename,sal from emp1 order by sal desc
+
+
+|/* order of presentation 
+select
+from clause
+where clause
+group by
+having 
+order by
+*/
+
+select max(sal),ename,emp1no,job from emp1  where deptno =10  group by ename,emp1no,job 
+
+select ename,emp1no,job from emp1 group by ename,emp1no,job having max(sal)>1000 
+
+select ename,emp1no,job from emp1 where job='clerk' group by ename,emp1no,job having max(sal)>1000 
