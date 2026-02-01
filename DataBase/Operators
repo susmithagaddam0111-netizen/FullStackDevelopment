@@ -25,3 +25,60 @@ select*from emp1
 
  select*from emp1 where sal between 1000 and 1500
  select*from emp1 where sal not between 1000 and 1500
+--------------------------------------------------
+select ename from emp1
+
+ select  ename,job,deptno from emp1 where job='clerk' and deptno=10
+
+ select ename , emp1no from emp1 where emp1no in(7782,7844,7900)
+
+ select ename,sal ,sal-(sal*0.25) as ded_sal from emp1
+
+ select sal*12 as ann_sal from emp1 where ename='smith'
+
+ select*from emp1 where hiredate > '19810101' -- yyyy-mm-dd
+
+ select emp1no from emp1 where deptno=30
+
+ select*from emp1 where job='manager'
+
+ select ename, sal from emp1 where comm = 1400
+
+ select*from emp1 where comm > sal
+
+ select ename,hiredate  from emp1 where hiredate between '19801231' and '19820101'
+
+ select ename,emp1no from emp1 where deptno in (10,20,30)
+
+ select ename,deptno from emp1 where deptno not in (10 ,20)
+
+ select ename,sal,deptno from emp1 where sal between 2000 and 3000
+
+ select ename,sal*12 as anu_sal ,deptno from emp1 where sal*12 between 15000 and 36000
+
+ select ename,sal,deptno from emp1 where sal not between 2000 and 3000
+
+ select * from emp1 where comm is null
+
+  select * from emp1 where comm is not null
+
+ select ename ,deptno,job from emp1 where deptno in (10 , 30) and job = 'manager'
+
+ ---
+ select ename  from emp1 where ename  like '%s'
+
+  select ename  from emp1 where ename  like 's%'
+
+ select ename  from emp1 where ename  like '__a%'
+
+  select ename ,deptno from emp1 where deptno not in (10 , 30)
+
+  select ename  from emp1 where ename  like  'a%' or
+            ename  like  'e%' or 
+								   ename  like'i%' or 
+								    ename  like'o%' or 
+									 ename  like' u%'
+
+select * from emp1 where deptno=30 and sal>1500
+
+select * from emp1 where comm is null and job='clerk'
