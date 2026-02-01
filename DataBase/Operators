@@ -1,0 +1,27 @@
+--arthematic operators ( +,-,*,%,/)
+select ename,emp1no,sal*1000 as al_sal from emp1 where ename='allen'
+select*from emp1 where ename='allen'
+
+--relational operators(>,<,<=,>=)
+select *from emp1 where sal>1000
+
+-- comparision operator(=)
+select ename,emp1no from emp1 where ename='smith'
+
+--logical operators(and,or)
+--and = all the conditions should satisfy
+-- or = any one condition can satisfy
+select*from emp1
+ select*from emp1 where job='clerk' and deptno=20
+ select *from emp1 where sal=1000 or deptno=30
+
+ --special operators
+ -- (IN,NOTIN,IS,ISNOT,BETWEEN,NOT BETWEEN,LIKE,UNLIKE)
+ select*from emp1 where emp1no in(7499,7521,7654)
+ select*from emp1 where emp1no not in(7499,7521,7654)
+
+ select*from emp1 where comm is null
+ select*from emp1 where comm is not null
+
+ select*from emp1 where sal between 1000 and 1500
+ select*from emp1 where sal not between 1000 and 1500
