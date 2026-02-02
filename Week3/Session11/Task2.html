@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Media Blog Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #333;
+        }
+
+        header {
+            background: #222;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .blog-card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .blog-card h2 {
+            margin-top: 0;
+            color: #222;
+        }
+
+        .blog-card p {
+            line-height: 1.6;
+        }
+
+        video, audio {
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 6px;
+        }
+
+        .controls {
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #222;
+            color: white;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎬 Media Blog Platform</h1>
+    <p>Blogs with Video & Audio Experience</p>
+</header>
+
+<div class="container">
+
+    <!-- Blog Post 1 -->
+    <div class="blog-card">
+        <h2>Understanding HTML5 Video Streaming</h2>
+        <p>
+            HTML5 provides native support for video streaming without plugins.
+            Below is an example of a video embedded directly inside a blog post.
+        </p>
+
+        <video controls>
+            <source src="sample-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Blog Post 2 -->
+    <div class="blog-card">
+        <h2>Podcast: Frontend Development Basics</h2>
+        <p>
+            Listen to this audio podcast while reading the article.
+            The audio player supports play, pause, seek and volume control.
+        </p>
+
+        <audio controls>
+            <source src="sample-audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+    <!-- Blog Post 3 -->
+    <div class="blog-card">
+        <h2>Interactive Media Experience</h2>
+        <p>
+            Combining text, video, and audio improves engagement and enhances
+            the learning experience for users.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Media Blog Platform</p>
+</footer>
+
+</body>
+</html>
