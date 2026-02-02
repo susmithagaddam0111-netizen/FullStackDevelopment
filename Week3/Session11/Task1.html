@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Semantic Layout Designs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+header, footer {
+    background: #222;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+/* ================= GRID LAYOUT ================= */
+
+.grid-layout {
+    display: grid;
+    grid-template-areas:
+        "nav nav nav"
+        "article article aside"
+        "section section aside";
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.grid-layout nav {
+    grid-area: nav;
+    background: #2874f0;
+    color: white;
+    padding: 15px;
+}
+
+.grid-layout article {
+    grid-area: article;
+    background: white;
+    padding: 15px;
+}
+
+.grid-layout section {
+    grid-area: section;
+    background: white;
+    padding: 15px;
+}
+
+.grid-layout aside {
+    grid-area: aside;
+    background: #ddd;
+    padding: 15px;
+}
+
+/* ================= FIXED SIDEBAR LAYOUT ================= */
+
+.fixed-layout {
+    display: flex;
+    min-height: 400px;
+}
+
+.fixed-layout aside {
+    width: 220px;
+    background: #333;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+}
+
+.fixed-layout .content {
+    margin-left: 240px;
+    padding: 20px;
+    flex: 1;
+}
+
+.fixed-layout article {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.fixed-layout section {
+    background: #eaeaea;
+    padding: 20px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    .grid-layout {
+        grid-template-areas:
+            "nav"
+            "article"
+            "section"
+            "aside";
+        grid-template-columns: 1fr;
+    }
+
+    .fixed-layout {
+        flex-direction: column;
+    }
+
+    .fixed-layout aside {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .fixed-layout .content {
+        margin-left: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Semantic Web Layout Designs</h1>
+    <p>Grid Layout & Fixed Sidebar Layout</p>
+</header>
+
+<main>
+
+    <!-- ================= GRID BASED LAYOUT ================= -->
+    <h2>Grid-Based Layout</h2>
+    <div class="grid-layout">
+
+        <nav>
+            <h3>Navigation</h3>
+            <p>Home | About | Services | Contact</p>
+        </nav>
+
+        <article>
+            <h3>Main Article</h3>
+            <p>
+                This layout uses CSS Grid with semantic HTML tags.
+                It is ideal for dashboards, blogs, and content-heavy websites.
+            </p>
+        </article>
+
+        <section>
+            <h3>Content Section</h3>
+            <p>
+                Sections are used to group related content.
+                This area can display additional information or widgets.
+            </p>
+        </section>
+
+        <aside>
+            <h3>Sidebar</h3>
+            <p>Related links and ads</p>
+        </aside>
+
+    </div>
+
+    <!-- ================= FIXED SIDEBAR LAYOUT ================= -->
+    <h2>Fixed Sidebar Layout</h2>
+    <div class="fixed-layout">
+
+        <aside>
+            <h3>Fixed Menu</h3>
+            <ul>
+                <li>Dashboard</li>
+                <li>Profile</li>
+                <li>Settings</li>
+            </ul>
+        </aside>
+
+        <div class="content">
+            <article>
+                <h3>Content Area</h3>
+                <p>
+                    The sidebar remains fixed while the content scrolls.
+                    This design is commonly used in admin panels and portals.
+                </p>
+            </article>
+
+            <section>
+                <h3>Additional Section</h3>
+                <p>
+                    Semantic tags improve accessibility, SEO,
+                    and code readability.
+                </p>
+            </section>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 Semantic Layout Demo</p>
+</footer>
+
+</body>
+</html>
