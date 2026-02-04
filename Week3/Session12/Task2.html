@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tantraz Registration</title>
+
+<style>
+form {
+    width: 400px;
+    background: #ffffff;
+    padding: 20px;
+    font-family: Arial;
+}
+label {
+    display: block;
+    margin-top: 10px;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+}
+.inline {
+    width: auto;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Tantraz Registration Form</h2>
+
+<form aria-label="Tantraz registration form">
+
+    <label>Full Name</label>
+    <input type="text" required placeholder="Enter your full name">
+
+    <label>Email</label>
+    <input type="email" required placeholder="Enter your email">
+
+    <label>Participation Category</label>
+    <select required>
+        <option value="">Select</option>
+        <option>Individual</option>
+        <option>Team</option>
+        <option>Audience</option>
+    </select>
+
+    <label>T-Shirt Size</label>
+    <input type="radio" name="size" class="inline"> S
+    <input type="radio" name="size" class="inline"> M
+    <input type="radio" name="size" class="inline"> L
+    <input type="radio" name="size" class="inline"> XL
+
+    <label>Technical Interests</label>
+    <input type="checkbox" class="inline"> AI
+    <input type="checkbox" class="inline"> Web Development
+    <input type="checkbox" class="inline"> Cloud Computing
+
+    <label>Expectations / Suggestions</label>
+    <textarea maxlength="200" placeholder="Max 200 characters"></textarea>
+
+    <button type="submit">Register</button>
+</form>
+
+</body>
+</html>
