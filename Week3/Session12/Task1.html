@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sign In & Sign Up</title>
+
+<style>
+form {
+    width: 350px;
+    background: #f9f9f9;
+    padding: 20px;
+    margin: 20px;
+    font-family: Arial;
+}
+label {
+    display: block;
+    margin-top: 10px;
+}
+input {
+    width: 100%;
+    padding: 8px;
+}
+button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Sign In</h2>
+<form aria-label="Sign in form">
+    <label>Email</label>
+    <input type="email" aria-label="Email address" required>
+
+    <label>Password</label>
+    <input type="password" aria-label="Password" required>
+
+    <button type="submit">Sign In</button>
+</form>
+
+<h2>Sign Up</h2>
+<form aria-label="Sign up form">
+    <label>Full Name</label>
+    <input type="text" aria-label="Full name" required>
+
+    <label>Email</label>
+    <input type="email" aria-label="Email address" required>
+
+    <label>Password</label>
+    <input type="password" aria-label="Create password" required>
+
+    <button type="submit">Sign Up</button>
+</form>
+
+</body>
+</html>
