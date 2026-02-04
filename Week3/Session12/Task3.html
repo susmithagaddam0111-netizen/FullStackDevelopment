@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Form Validation</title>
+
+<style>
+form {
+    width: 350px;
+    font-family: Arial;
+    background: #f2f2f2;
+    padding: 20px;
+}
+label {
+    display: block;
+    margin-top: 10px;
+}
+input, textarea {
+    width: 100%;
+    padding: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>User Input Validation Form</h2>
+
+<form>
+
+    <label>Name *</label>
+    <input type="text" required placeholder="Name is mandatory">
+
+    <label>Email *</label>
+    <input type="email" required placeholder="Valid email required">
+
+    <label>Category *</label>
+    <select required>
+        <option value="">Select category</option>
+        <option>Individual</option>
+        <option>Team</option>
+    </select>
+
+    <label>Biography</label>
+    <textarea maxlength="200"
+              placeholder="Max 200 characters allowed">
+    </textarea>
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
